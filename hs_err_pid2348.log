@@ -1,0 +1,374 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 87031808 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2640), pid=2348, tid=0x00007fe3711c2700
+#
+# JRE version:  (8.0_152-b19) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.152-b19 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fe36800b000):  JavaThread "Unknown thread" [_thread_in_vm, id=2349, stack(0x00007fe3710c3000,0x00007fe3711c3000)]
+
+Stack: [0x00007fe3710c3000,0x00007fe3711c3000],  sp=0x00007fe3711c13e0,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa3a6be]  VMError::report_and_die()+0x14e
+V  [libjvm.so+0x4dc9b9]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x99
+V  [libjvm.so+0x8ab883]  os::Linux::commit_memory_impl(char*, unsigned long, bool)+0x113
+V  [libjvm.so+0x8abaa9]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x29
+V  [libjvm.so+0x8a304a]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2a
+V  [libjvm.so+0x9105cb]  PSVirtualSpace::expand_by(unsigned long)+0x6b
+V  [libjvm.so+0x900bb9]  PSOldGen::initialize(ReservedSpace, unsigned long, char const*, int)+0xc9
+V  [libjvm.so+0x2d0dae]  AdjoiningGenerations::AdjoiningGenerations(ReservedSpace, GenerationSizer*, unsigned long)+0x38e
+V  [libjvm.so+0x8c86d7]  ParallelScavengeHeap::initialize()+0x1e7
+V  [libjvm.so+0xa05231]  Universe::initialize_heap()+0x101
+V  [libjvm.so+0xa062e3]  universe_init()+0x33
+V  [libjvm.so+0x6084a5]  init_globals()+0x55
+V  [libjvm.so+0x9eabb7]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x207
+V  [libjvm.so+0x66d8a4]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x7217]  JavaMain+0x87
+C  [libpthread.so.0+0x76db]  start_thread+0xdb
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007fe36800b000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=2349, stack(0x00007fe3710c3000,0x00007fe3711c3000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 7212019                            /home/liuwei/software/idea-IU-182.4892.20/jre64/bin/java
+00600000-00601000 rw-p 00000000 08:01 7212019                            /home/liuwei/software/idea-IU-182.4892.20/jre64/bin/java
+02533000-02554000 rw-p 00000000 00:00 0                                  [heap]
+8a700000-d7180000 ---p 00000000 00:00 0 
+d7180000-d9a80000 rw-p 00000000 00:00 0 
+d9a80000-100000000 ---p 00000000 00:00 0 
+7fe359000000-7fe359270000 rwxp 00000000 00:00 0 
+7fe359270000-7fe368000000 ---p 00000000 00:00 0 
+7fe368000000-7fe368035000 rw-p 00000000 00:00 0 
+7fe368035000-7fe36c000000 ---p 00000000 00:00 0 
+7fe36d7ef000-7fe36da68000 rw-p 00000000 00:00 0 
+7fe36da68000-7fe36dcf6000 ---p 00000000 00:00 0 
+7fe36dcf6000-7fe36dd0c000 rw-p 00000000 00:00 0 
+7fe36dd0c000-7fe36de3e000 ---p 00000000 00:00 0 
+7fe36de3e000-7fe36de49000 rw-p 00000000 00:00 0 
+7fe36de49000-7fe36e1ff000 ---p 00000000 00:00 0 
+7fe36e1ff000-7fe36e219000 r-xp 00000000 08:01 7211928                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libzip.so
+7fe36e219000-7fe36e418000 ---p 0001a000 08:01 7211928                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libzip.so
+7fe36e418000-7fe36e419000 rw-p 00019000 08:01 7211928                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libzip.so
+7fe36e419000-7fe36e424000 r-xp 00000000 08:01 3150653                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fe36e424000-7fe36e623000 ---p 0000b000 08:01 3150653                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fe36e623000-7fe36e624000 r--p 0000a000 08:01 3150653                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fe36e624000-7fe36e625000 rw-p 0000b000 08:01 3150653                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7fe36e625000-7fe36e62b000 rw-p 00000000 00:00 0 
+7fe36e62b000-7fe36e642000 r-xp 00000000 08:01 3150647                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fe36e642000-7fe36e841000 ---p 00017000 08:01 3150647                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fe36e841000-7fe36e842000 r--p 00016000 08:01 3150647                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fe36e842000-7fe36e843000 rw-p 00017000 08:01 3150647                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7fe36e843000-7fe36e845000 rw-p 00000000 00:00 0 
+7fe36e845000-7fe36e850000 r-xp 00000000 08:01 3150664                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fe36e850000-7fe36ea4f000 ---p 0000b000 08:01 3150664                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fe36ea4f000-7fe36ea50000 r--p 0000a000 08:01 3150664                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fe36ea50000-7fe36ea51000 rw-p 0000b000 08:01 3150664                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7fe36ea51000-7fe36ea59000 r-xp 00000000 08:01 3150649                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fe36ea59000-7fe36ec59000 ---p 00008000 08:01 3150649                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fe36ec59000-7fe36ec5a000 r--p 00008000 08:01 3150649                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fe36ec5a000-7fe36ec5b000 rw-p 00009000 08:01 3150649                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7fe36ec5b000-7fe36ec85000 r-xp 00000000 08:01 7211899                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libjava.so
+7fe36ec85000-7fe36ee85000 ---p 0002a000 08:01 7211899                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libjava.so
+7fe36ee85000-7fe36ee87000 rw-p 0002a000 08:01 7211899                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libjava.so
+7fe36ee87000-7fe36ee96000 r-xp 00000000 08:01 7211927                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libverify.so
+7fe36ee96000-7fe36f095000 ---p 0000f000 08:01 7211927                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libverify.so
+7fe36f095000-7fe36f097000 rw-p 0000e000 08:01 7211927                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/libverify.so
+7fe36f097000-7fe36f09e000 r-xp 00000000 08:01 3150704                    /lib/x86_64-linux-gnu/librt-2.27.so
+7fe36f09e000-7fe36f29d000 ---p 00007000 08:01 3150704                    /lib/x86_64-linux-gnu/librt-2.27.so
+7fe36f29d000-7fe36f29e000 r--p 00006000 08:01 3150704                    /lib/x86_64-linux-gnu/librt-2.27.so
+7fe36f29e000-7fe36f29f000 rw-p 00007000 08:01 3150704                    /lib/x86_64-linux-gnu/librt-2.27.so
+7fe36f29f000-7fe36f43c000 r-xp 00000000 08:01 3150626                    /lib/x86_64-linux-gnu/libm-2.27.so
+7fe36f43c000-7fe36f63b000 ---p 0019d000 08:01 3150626                    /lib/x86_64-linux-gnu/libm-2.27.so
+7fe36f63b000-7fe36f63c000 r--p 0019c000 08:01 3150626                    /lib/x86_64-linux-gnu/libm-2.27.so
+7fe36f63c000-7fe36f63d000 rw-p 0019d000 08:01 3150626                    /lib/x86_64-linux-gnu/libm-2.27.so
+7fe36f63d000-7fe37027d000 r-xp 00000000 08:01 7211932                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/server/libjvm.so
+7fe37027d000-7fe37047c000 ---p 00c40000 08:01 7211932                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/server/libjvm.so
+7fe37047c000-7fe37054c000 rw-p 00c3f000 08:01 7211932                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/server/libjvm.so
+7fe37054c000-7fe37058e000 rw-p 00000000 00:00 0 
+7fe37058e000-7fe370775000 r-xp 00000000 08:01 3150563                    /lib/x86_64-linux-gnu/libc-2.27.so
+7fe370775000-7fe370975000 ---p 001e7000 08:01 3150563                    /lib/x86_64-linux-gnu/libc-2.27.so
+7fe370975000-7fe370979000 r--p 001e7000 08:01 3150563                    /lib/x86_64-linux-gnu/libc-2.27.so
+7fe370979000-7fe37097b000 rw-p 001eb000 08:01 3150563                    /lib/x86_64-linux-gnu/libc-2.27.so
+7fe37097b000-7fe37097f000 rw-p 00000000 00:00 0 
+7fe37097f000-7fe370982000 r-xp 00000000 08:01 3150586                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7fe370982000-7fe370b81000 ---p 00003000 08:01 3150586                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7fe370b81000-7fe370b82000 r--p 00002000 08:01 3150586                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7fe370b82000-7fe370b83000 rw-p 00003000 08:01 3150586                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7fe370b83000-7fe370b98000 r-xp 00000000 08:01 7211880                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/jli/libjli.so
+7fe370b98000-7fe370d98000 ---p 00015000 08:01 7211880                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/jli/libjli.so
+7fe370d98000-7fe370d99000 rw-p 00015000 08:01 7211880                    /home/liuwei/software/idea-IU-182.4892.20/jre64/lib/amd64/jli/libjli.so
+7fe370d99000-7fe370db3000 r-xp 00000000 08:01 3150696                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fe370db3000-7fe370fb2000 ---p 0001a000 08:01 3150696                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fe370fb2000-7fe370fb3000 r--p 00019000 08:01 3150696                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fe370fb3000-7fe370fb4000 rw-p 0001a000 08:01 3150696                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7fe370fb4000-7fe370fb8000 rw-p 00000000 00:00 0 
+7fe370fb8000-7fe370fdf000 r-xp 00000000 08:01 3150535                    /lib/x86_64-linux-gnu/ld-2.27.so
+7fe3710c2000-7fe3710c3000 ---p 00000000 00:00 0 
+7fe3710c3000-7fe3710c6000 ---p 00000000 00:00 0 
+7fe3710c6000-7fe3711c5000 rw-p 00000000 00:00 0 
+7fe3711d3000-7fe3711db000 rw-s 00000000 08:01 396218                     /tmp/hsperfdata_liuwei/2348
+7fe3711db000-7fe3711dc000 rw-p 00000000 00:00 0 
+7fe3711dc000-7fe3711dd000 r--p 00000000 00:00 0 
+7fe3711dd000-7fe3711df000 rw-p 00000000 00:00 0 
+7fe3711df000-7fe3711e0000 r--p 00027000 08:01 3150535                    /lib/x86_64-linux-gnu/ld-2.27.so
+7fe3711e0000-7fe3711e1000 rw-p 00028000 08:01 3150535                    /lib/x86_64-linux-gnu/ld-2.27.so
+7fe3711e1000-7fe3711e2000 rw-p 00000000 00:00 0 
+7ffc8d7e6000-7ffc8d807000 rw-p 00000000 00:00 0                          [stack]
+7ffc8d9f0000-7ffc8d9f3000 r--p 00000000 00:00 0                          [vvar]
+7ffc8d9f3000-7ffc8d9f5000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): /home/liuwei/software/idea-IU-182.4892.20/plugins/git4idea/lib/git4idea-rt.jar:/home/liuwei/software/idea-IU-182.4892.20/lib/xmlrpc-2.0.1.jar:/home/liuwei/software/idea-IU-182.4892.20/lib/commons-codec-1.10.jar:/home/liuwei/software/idea-IU-182.4892.20/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib/git-core:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+USERNAME=liuwei
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa3b0a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa3b0a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8a56f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8a56f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8a56f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8a56f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8a6df0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.1 LTS"
+
+uname:Linux 4.15.0-38-generic #41-Ubuntu SMP Wed Oct 10 10:59:38 UTC 2018 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 31160, NOFILE 1048576, AS infinity
+load average:1.79 0.72 0.44
+
+/proc/meminfo:
+MemTotal:        8037692 kB
+MemFree:          116824 kB
+MemAvailable:      35120 kB
+Buffers:            1460 kB
+Cached:          1132088 kB
+SwapCached:          516 kB
+Active:          6685828 kB
+Inactive:         863972 kB
+Active(anon):    6661420 kB
+Inactive(anon):   832608 kB
+Active(file):      24408 kB
+Inactive(file):    31364 kB
+Unevictable:         576 kB
+Mlocked:             576 kB
+SwapTotal:       2097148 kB
+SwapFree:             24 kB
+Dirty:               148 kB
+Writeback:             0 kB
+AnonPages:       6417292 kB
+Mapped:           172160 kB
+Shmem:           1076868 kB
+Slab:             131580 kB
+SReclaimable:      50540 kB
+SUnreclaim:        81040 kB
+KernelStack:       22768 kB
+PageTables:       124608 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6115992 kB
+Committed_AS:   23816916 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      407784 kB
+DirectMap2M:     7849984 kB
+DirectMap1G:     1048576 kB
+
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz
+stepping	: 3
+microcode	: 0x25
+cpu MHz		: 3752.398
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 6784.30
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz
+stepping	: 3
+microcode	: 0x25
+cpu MHz		: 3663.918
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 6784.30
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz
+stepping	: 3
+microcode	: 0x25
+cpu MHz		: 3754.962
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 6784.30
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz
+stepping	: 3
+microcode	: 0x25
+cpu MHz		: 3691.090
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf
+bogomips	: 6784.30
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8037692k(123300k free), swap 2097148k(24k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.152-b19) for linux-amd64 JRE (1.8.0_152-release-1248-b19), built on Oct 13 2018 05:26:22 by "root" with gcc 4.4.7 20120313 (Red Hat 4.4.7-16)
+
+time: Fri Nov  9 09:54:43 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
