@@ -68,7 +68,7 @@ public class LengthOfLongestSubstring {
      */
     public int lengthOfLongestSubstring(String s) {
         // 字典
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>(s.length());
 
         char[] sarray = s.toCharArray();
 
@@ -98,7 +98,22 @@ public class LengthOfLongestSubstring {
         return max;
     }
 
+    public int l(String s) {
+        int[] m = new int[256];
+
+        int res = 0, left = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            left = Math.max(left, m[s.charAt(i)]);
+
+            res = Math.max(res, i - left + 1);
+
+            m[s.charAt(i)] = i + 1;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring("pwwkew"));
+        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring("aaaa"));
     }
 }
