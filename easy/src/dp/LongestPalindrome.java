@@ -14,6 +14,7 @@ public class LongestPalindrome {
      * 输出: "bab"
      * 注意: "aba" 也是一个有效答案。
      */
+    // 解法来自https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/
     public String longestPalindromeSlow(String s) {
         int length = s.length();
 
